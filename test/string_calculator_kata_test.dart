@@ -21,5 +21,9 @@ group("StringCalculator", (){
   test('multiple numbers, comma delimited, returns sum', (){
     expect(calculator.add('1,2,3,4,5'), equals(15));
   });
+
+  test('multiple numbers, newline and comma as delimiter, returns sum', (){
+    expect(calculator.add('1\n2,3'), equals(6));
+  });
 });
 }
