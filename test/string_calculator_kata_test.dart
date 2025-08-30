@@ -13,5 +13,9 @@ group("StringCalculator", (){
   test('single number returns itself', (){
     expect(calculator.add('5'), equals(5));
   });
+
+  test('two numbers, comma delimited, returns sum', (){
+    expect(calculator.add('1,2'), equals(3));
+  });
 });
 }
