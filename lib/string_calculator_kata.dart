@@ -9,7 +9,12 @@ class StringCalculator {
       nums = match.group(2)!;
    }
    final tokens = nums.split(RegExp(delimiters));
-   return tokens.map((int.parse)).reduce((a,b) => a+b);
+   final parsedNumbers = tokens.map(int.parse).toList();
+   final negatives = parsedNumbers.where((n) => n < 0).toList();
+   if(negatives.isNotEmpty){
+    throw Exception('negatives not allowed: ${negatives.join(', ')}');
+   }
+   return parsedNumbers.reduce((a,b) => a+b);
 
   }
 }

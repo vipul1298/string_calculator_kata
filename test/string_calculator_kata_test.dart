@@ -29,5 +29,9 @@ group("StringCalculator", (){
   test('custom delimiter', (){
     expect(calculator.add('//;\n1;2'), equals(3));
   });
+
+  test('negative numbers throw exception', (){
+    expect(() => calculator.add('1,-2,3,-4'), throwsA(predicate((e) => e is Exception && e.toString() == 'Exception: negatives not allowed: -2, -4')));
+  });
 });
 }
