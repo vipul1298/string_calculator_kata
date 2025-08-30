@@ -25,5 +25,9 @@ group("StringCalculator", (){
   test('multiple numbers, newline and comma as delimiter, returns sum', (){
     expect(calculator.add('1\n2,3'), equals(6));
   });
+
+  test('custom delimiter', (){
+    expect(calculator.add('//;\n1;2'), equals(3));
+  });
 });
 }
