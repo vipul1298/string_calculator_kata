@@ -9,5 +9,9 @@ group("StringCalculator", (){
   test('empty string returns 0', (){
     expect(calculator.add(''), equals(0));
   });
+
+  test('single number returns itself', (){
+    expect(calculator.add('5'), equals(5));
+  });
 });
 }
